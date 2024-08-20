@@ -4,13 +4,13 @@ public extension Color {
     struct Neumorphic {
         // Color
         private static let defaultMainColor = NeumorphicKit
-            .colorType(red: 0, green: 0.0588, blue: 0.0588)
+            .colorType(red: 0.7098, green: 0.949, blue: 0.949)
         private static let defaultSecondaryColor = NeumorphicKit
-            .colorType(red: 0.475, green: 0.537, blue: 0.537)
+            .colorType(red: 0.3373, green: 0.5373, blue: 0.5373)
         private static let defaultLightShadowSolidColor = NeumorphicKit
             .colorType(red: 1.000, green: 1.000, blue: 1.000)
         private static let defaultDarkShadowSolidColor = NeumorphicKit
-            .colorType(red: 0.828, green: 0.898, blue: 0.898)
+            .colorType(red: 0.550, green: 0.898, blue: 0.898)
 
         private static let darkThemeMainColor = NeumorphicKit
             .colorType(red: 0.188, green: 0.192, blue: 0.208)
@@ -44,6 +44,29 @@ public extension Color {
 
         public static var darkShadow: Color {
             NeumorphicKit.color(light: defaultDarkShadowSolidColor, dark: darkThemeDarkShadowSolidColor)
+        }
+    }
+}
+
+#Preview {
+    ZStack {
+        Color.Neumorphic.main
+        #if available
+            .ignoresSafeArea()
+        #endif
+        VStack {
+            Text("secondary color")
+                .foregroundColor(
+                    Color.Neumorphic.secondary
+                )
+            Text("light shadow color")
+                .foregroundColor(
+                    Color.Neumorphic.lightShadow
+                )
+            Text("dark shadow color")
+                .foregroundColor(
+                    Color.Neumorphic.darkShadow
+                )
         }
     }
 }
