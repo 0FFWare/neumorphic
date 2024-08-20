@@ -8,7 +8,7 @@ public extension Color {
         private static let defaultSecondaryColor = NeumorphicKit
             .colorType(red: 0.3373, green: 0.5373, blue: 0.5373)
         private static let defaultLightShadowSolidColor = NeumorphicKit
-            .colorType(red: 1.000, green: 1.000, blue: 1.000)
+            .colorType(red: 0.80, green: 1.000, blue: 1.000)
         private static let defaultDarkShadowSolidColor = NeumorphicKit
             .colorType(red: 0.550, green: 0.898, blue: 0.898)
 
@@ -54,19 +54,13 @@ public extension Color {
         #if available
             .ignoresSafeArea()
         #endif
-        VStack {
-            Text("secondary color")
-                .foregroundColor(
-                    Color.Neumorphic.secondary
-                )
-            Text("light shadow color")
-                .foregroundColor(
-                    Color.Neumorphic.lightShadow
-                )
-            Text("dark shadow color")
-                .foregroundColor(
-                    Color.Neumorphic.darkShadow
-                )
+
+        Button(action: {}) {
+            Text("Heyyo").font(.largeTitle).fontWeight(.black)
         }
+        .softButtonStyle(
+            RoundedRectangle(cornerRadius: 20)
+        )
+        .padding()
     }
 }
