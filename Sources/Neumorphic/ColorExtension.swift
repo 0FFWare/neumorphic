@@ -47,20 +47,3 @@ public extension Color {
         }
     }
 }
-
-#Preview {
-    ZStack {
-        Color.Neumorphic.main
-        #if available
-            .ignoresSafeArea()
-        #endif
-
-        Button(action: {}) {
-            Text("Heyyo").font(.largeTitle).fontWeight(.black)
-        }
-        .softButtonStyle(
-            RoundedRectangle(cornerRadius: 20)
-        )
-        .padding()
-    }
-}
